@@ -214,7 +214,7 @@ And idk... every time you tell me about work, I genuinely feel humbled. I don't 
 
 My stupid ass has never even been remotely this busy. 😭
 
-But I also really want you to be excited about your personal life too.
+But I also feel you deserve to be excited about your personal life too.
 
 And selfishly... I'm here because I'd genuinely want to make it just a tiny bit more interesting. 🥺`;
 
