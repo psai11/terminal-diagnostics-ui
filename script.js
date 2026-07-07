@@ -200,16 +200,29 @@
 
 I genuinely didn't mean it like that.
 
-My brain somehow took a very stupid route to say:
+That message came out much more passive aggressive than I ever intended, and I felt bad about it almost immediately.
 
-"Wait... didn't we already spend an hour talking about Voicemails for Isabelle earlier?" 😭
+I accept full responsibility for Chaitanya.exe briefly malfunctioning. 🫠
 
-I accept full responsibility for being an idiot lol.`;
+...
+
+Also...
+
+You said you're so occupied with work that you don't even remember what's happening with your personal life.
+
+And idk... every time you tell me about work, I genuinely feel humbled. I don't think I've ever met someone this dedicated to what they do.
+
+My stupid ass has never even been remotely this busy. 😭
+
+But I also really want you to be excited about your personal life too.
+
+And selfishly... I'm here because I'd genuinely want to make it just a tiny bit more interesting. 🥺`;
 
   async function screen5() {
     const items = $$("#checklist li[data-check]");
     const apologyBox = $("#apologyBox");
     const apologyText = $("#apologyText");
+    const apologyImg = $("#apologyImg");
     const acceptBtn = $("#acceptBtn");
 
     await sleep(300);
@@ -228,10 +241,13 @@ I accept full responsibility for being an idiot lol.`;
     } else {
       for (let i = 0; i < APOLOGY.length; i++) {
         apologyText.textContent = APOLOGY.slice(0, i + 1);
-        await sleep(22);
+        await sleep(12);
       }
       apologyText.classList.add("typed");
     }
+
+    await sleep(300);
+    apologyImg.classList.remove("hidden");
 
     await sleep(250);
     acceptBtn.classList.remove("hidden");
@@ -274,6 +290,7 @@ I accept full responsibility for being an idiot lol.`;
     $("#apologyBox").classList.add("hidden");
     $("#apologyText").textContent = "";
     $("#apologyText").classList.remove("typed");
+    $("#apologyImg").classList.add("hidden");
     $("#acceptBtn").classList.add("hidden");
 
     showScreen(1);

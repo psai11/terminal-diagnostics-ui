@@ -416,6 +416,18 @@ h3.section-title { font-size: 1rem; color: var(--white); margin-top: 22px; }
 }
 .apology-text.typed::after { content: ""; }
 
+.apology-img {
+  display: block;
+  width: 130px;
+  max-width: 45%;
+  height: auto;
+  margin: 16px auto 4px;
+  border-radius: 12px;
+  border: 1px solid var(--green-dim);
+  box-shadow: var(--glow-green);
+  animation: fadeIn 0.5s ease both;
+}
+
 /* ---------------- FINAL SCREEN ---------------- */
 .final-card { text-align: center; }
 .success-icon { margin: 4px auto 14px; width: 92px; height: 92px; }
