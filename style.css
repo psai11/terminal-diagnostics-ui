@@ -418,8 +418,8 @@ h3.section-title { font-size: 1rem; color: var(--white); margin-top: 22px; }
 
 .apology-img {
   display: block;
-  width: 130px;
-  max-width: 45%;
+  width: clamp(120px, 38vw, 260px);
+  max-width: 80%;
   height: auto;
   margin: 16px auto 4px;
   border-radius: 12px;
