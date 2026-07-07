@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0d0b" />
+  <title>Passive Aggressive Detector™ — Incident Recovery Wizard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="app" id="app">
+
+    <!-- GLOBAL PROGRESS BAR -->
+    <header class="progress-wrap" aria-live="polite">
+      <div class="progress-top">
+        <span class="progress-label">Recovery Progress</span>
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+        <span class="progress-fill" id="progressFill"></span>
+      </div>
+      <div class="progress-stage" id="progressStage">Booting System</div>
+    </header>
+
+    <!-- SCREENS -->
+    <section class="screens" id="screens">
+
+      <!-- SCREEN 1 -->
+      <article class="screen is-active" data-screen="1">
+        <div class="card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">detector.sh — scan</span>
+          </div>
+          <div class="card-body">
+            <h1 class="glow-green">Passive Aggressive Detector<span class="tm">™</span></h1>
+            <p class="subtitle">Scanning last sent message<span class="ellipsis"></span></p>
+
+            <div class="log" id="log1"></div>
+
+            <div class="loader">
+              <div class="loader-blocks" id="blocks1"></div>
+              <div class="loader-percent" id="pct1">0%</div>
+            </div>
+
+            <button class="btn hidden" id="btn1">Run Diagnosis <span class="arrow">→</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCREEN 2 -->
+      <article class="screen" data-screen="2">
+        <div class="card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">diagnosis.log</span>
+          </div>
+          <div class="card-body">
+            <h2 class="glow-warn">⚠ Passive Aggression Detected</h2>
+
+            <div class="msg-box">
+              <span class="msg-prompt">msg&gt;</span>
+              <span class="msg-text">"how many folks do you talk to 🫥"</span>
+            </div>
+
+            <h3 class="section-title">Diagnosis Report</h3>
+            <p class="report-line">Tone mismatch detected.</p>
+
+            <div class="kv">
+              <span class="k">Intended meaning</span>
+              <span class="v ok">✓ playful confusion</span>
+            </div>
+            <div class="kv">
+              <span class="k">Delivered meaning</span>
+              <span class="v bad">✗ suspicious interrogation</span>
+            </div>
+
+            <div class="notes">
+              <span class="notes-head">// Robot Notes</span>
+              <p>Chaitanya.exe briefly forgot how normal humans communicate.</p>
+            </div>
+
+            <button class="btn" data-next>Start Damage Control <span class="arrow">↓</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCREEN 3 -->
+      <article class="screen" data-screen="3">
+        <div class="card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">generate_response.py</span>
+          </div>
+          <div class="card-body">
+            <h2 class="glow-cyan">Generating Correct Response<span class="ellipsis"></span></h2>
+
+            <div class="log log-tall" id="log3"></div>
+
+            <div class="loader">
+              <div class="loader-blocks" id="blocks3"></div>
+              <div class="loader-percent" id="pct3">0%</div>
+            </div>
+
+            <button class="btn hidden" id="btn3">View Correct Response <span class="arrow">↓</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCREEN 4 -->
+      <article class="screen" data-screen="4">
+        <div class="card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">diff — before / after</span>
+          </div>
+          <div class="card-body">
+            <h2 class="glow-cyan">Patch Preview</h2>
+
+            <div class="diff">
+              <div class="diff-card bad-card">
+                <span class="diff-head bad">✗ Sent by mistake</span>
+                <hr />
+                <p>how many folks do you talk to 🫥</p>
+              </div>
+              <div class="diff-card ok-card">
+                <span class="diff-head ok">✓ Internal Thought</span>
+                <hr />
+                <p>Wait... didn't we already spend an hour talking about Voicemails for Isabelle earlier? 🥺</p>
+              </div>
+            </div>
+
+            <p class="patch-ready glow-green">Apology patch ready.</p>
+
+            <div class="btn-row">
+              <button class="btn" id="deployBtn">Deploy Patch <span class="arrow">↓</span></button>
+              <button class="btn btn-ghost" id="abortBtn">Abort &amp; Continue Being Dumb</button>
+            </div>
+
+            <div class="err-box hidden" id="abortErr">
+              <span class="err-head">✗ ERROR — Access Denied</span>
+              <p>Dumbness quota already exceeded. Please deploy the patch.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCREEN 5 -->
+      <article class="screen" data-screen="5">
+        <div class="card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">deploy.log — success</span>
+          </div>
+          <div class="card-body">
+            <h2 class="glow-green">Patch Successfully Deployed</h2>
+
+            <ul class="checklist" id="checklist">
+              <li data-check>Passive aggression removed</li>
+              <li data-check>Overthinking reduced by 12%</li>
+              <li data-check>Brain restarted</li>
+              <li data-check>Apology generated</li>
+              <li data-check>Think-before-send module installed</li>
+            </ul>
+
+            <div class="apology hidden" id="apologyBox">
+              <span class="apology-head">// final_apology.txt</span>
+              <p class="apology-text" id="apologyText"></p>
+            </div>
+
+            <button class="btn hidden" id="acceptBtn">Accept Apology? <span class="heart">♥</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- FINAL RECOVERY -->
+      <article class="screen" data-screen="6">
+        <div class="card final-card">
+          <div class="titlebar">
+            <span class="dots"><i class="dot red"></i><i class="dot amber"></i><i class="dot green"></i></span>
+            <span class="titlebar-text">recovery — complete</span>
+          </div>
+          <div class="card-body center">
+            <div class="success-icon" id="successIcon">
+              <svg viewBox="0 0 52 52" aria-hidden="true">
+                <circle class="si-circle" cx="26" cy="26" r="24" />
+                <path class="si-check" d="M14 27 l8 8 l16 -18" />
+              </svg>
+            </div>
+
+            <h2 class="glow-green">Recovery Complete.</h2>
+            <p class="version">Chaitanya.exe <span class="dim">— Version 2.1</span></p>
+
+            <div class="final-block">
+              <span class="final-head glow-warn">// Known Bugs</span>
+              <ul class="bullet">
+                <li>Overthinks</li>
+                <li>Occasionally says dumb things</li>
+                <li>Still under active development</li>
+              </ul>
+            </div>
+
+            <div class="final-block">
+              <span class="final-head glow-cyan">// System Status</span>
+              <ul class="status">
+                <li class="ok">✓ Stable</li>
+                <li class="ok">✓ Slightly Wiser</li>
+                <li class="warnish">✓ Still an Idiot</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost" id="restartBtn">↺ Run Again</button>
+          </div>
+        </div>
+        <footer class="footer">
+          Built using <span class="glow-green">HTML</span> · <span class="glow-cyan">CSS</span> · <span class="glow-green">JavaScript</span> · and regret.
+        </footer>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
